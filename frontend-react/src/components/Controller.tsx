@@ -1,5 +1,5 @@
 // import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button"
 
 function Controller() {
@@ -7,11 +7,13 @@ function Controller() {
     const [hasWon, setHasWon] = useState(false)
 
     const handlePlaceBet = () => {
-        setHasWon(true)
-        console.log(hasWon)
+        setHasWon(!hasWon)
     }
 
-    console.log(hasWon)
+    useEffect(() => {
+        console.log(hasWon);
+      }, [hasWon]);
+
   return (
     <div className="container bg-green-500 mx-auto">
       <Button runFunction={handlePlaceBet}/>
