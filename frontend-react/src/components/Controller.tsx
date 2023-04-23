@@ -1,6 +1,7 @@
 // import React from 'react'
 import { useState, useEffect } from "react";
 import Button from "./Button"
+import BetBox from "./BetBox";
 
 function Controller() {
 
@@ -15,8 +16,9 @@ function Controller() {
       }, [hasWon]);
 
   return (
-    <div className="container bg-green-500 mx-auto">
+    <div className="w-full md:w-[850px] lg:w-[1200px] px-5 py-12 bg-green-500 mx-auto">
       <Button runFunction={handlePlaceBet}/>
+      <BetBox />
     </div>
   )
 
